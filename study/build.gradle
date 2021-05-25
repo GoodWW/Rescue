@@ -1,0 +1,10 @@
+apply plugin: 'com.android.library'
+apply from: '../dependencies.gradle'
+
+android {
+    // 保留是为了  有时候需要其他的  在里面写  不然美必要保留
+}
+
+dependencies {
+    // 保留是为了  有时候需要其他的  在里面写  不然美必要保留
+}
