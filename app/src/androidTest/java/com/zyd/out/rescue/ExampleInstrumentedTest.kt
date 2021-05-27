@@ -2,11 +2,15 @@ package com.zyd.out.rescue
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 import org.junit.Test
 import org.junit.runner.RunWith
 
 import org.junit.Assert.*
+import kotlin.concurrent.thread
+import kotlin.system.measureNanoTime
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -18,7 +22,6 @@ class ExampleInstrumentedTest {
     @Test
     fun useAppContext() {
         // Context of the app under test.
-        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.zyd.out.rescue", appContext.packageName)
+
     }
 }

@@ -7,4 +7,9 @@ android {
 
 dependencies {
     // 保留是为了  有时候需要其他的  在里面写  不然美必要保留
+    //others from dependencies.gradle
+    api project(path: ':common')
+    //调试助手的工具
+    debugImplementation "com.didichuxing.doraemonkit:doraemonkit:3.2.0"
+    releaseImplementation "com.didichuxing.doraemonkit:doraemonkit-no-op:3.2.0"
 }
