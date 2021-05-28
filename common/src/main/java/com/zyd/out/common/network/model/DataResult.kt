@@ -14,7 +14,7 @@ package com.zyd.out.common.network.model
  * You never know what you can do until you try !
  * ----------------------------------------------------------------
  * 数据响应的封装类 ，密封类sealed
- * 其实可以使用kotlin标准库中的Result
+ * 其实可以使用kotlin标准库中的Result  两个版本
  */
 sealed class DataResult<out R> {
 

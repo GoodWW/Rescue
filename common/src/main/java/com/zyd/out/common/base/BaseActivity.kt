@@ -22,7 +22,7 @@ import com.zyd.out.common.ktx.viewLifeCycleOwner
  *
  * You never know what you can do until you try !
  * ----------------------------------------------------------------
- * 简单封装的基类Activity
+ * 简单封装  的  基类   Activity
  */
 abstract class BaseActivity<ActBinding : ViewDataBinding> : AppCompatActivity {
     /**
@@ -80,8 +80,8 @@ abstract class BaseActivity<ActBinding : ViewDataBinding> : AppCompatActivity {
     }
 
     /**
-     * 扩展用于liveData便捷写法的函数
-     * [block]liveData对象，响应change变化的逻辑块
+     * 扩展   用于   liveData   便捷写法  的  函数
+     * [block]  liveData对象，响应change变化的逻辑块
      */
     protected inline fun <T : Any> LiveData<T>.observeKt(crossinline block: (T?) -> Unit) {
         this.observe(this@BaseActivity, Observer {

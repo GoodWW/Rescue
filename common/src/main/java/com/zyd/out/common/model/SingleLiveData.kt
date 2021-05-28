@@ -20,8 +20,8 @@ import java.util.concurrent.atomic.AtomicBoolean
  *
  * You never know what you can do until you try !
  * ----------------------------------------------------------------
- * 单事件响应的liveData，只有一个接收者能接收到信息，可以避免不必要的业务的场景中的事件消费通知
- * 只有调用call的时候，observer才能收到通知
+ * 单 事件 响应 的  liveData，只有一个 接收者 能  接收到 信息，可以避免不必要的业务的场景中的事件消费通知
+ * 只有 调用 call 的 时候，observer 才能 收到通知
  */
 class SingleLiveData<T> : MutableLiveData<T>() {
 
@@ -39,7 +39,6 @@ class SingleLiveData<T> : MutableLiveData<T>() {
                 observer.onChanged(t)
             }
         })
-
     }
 
     override fun setValue(value: T?) {

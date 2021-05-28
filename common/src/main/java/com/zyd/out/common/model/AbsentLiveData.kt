@@ -15,7 +15,7 @@ import androidx.lifecycle.LiveData
  *
  * You never know what you can do until you try !
  * ----------------------------------------------------------------
- * 创建一个空的liveData的对象类
+ * 创建 一个 空 的 liveData 的 对象类
  */
 class AbsentLiveData<T : Any?> private constructor() : LiveData<T>() {
 

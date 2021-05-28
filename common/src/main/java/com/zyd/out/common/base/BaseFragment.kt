@@ -83,7 +83,7 @@ abstract class BaseFragment : Fragment {
     }
 
     /**
-     * 扩展用于liveData便捷写法的函数
+     * 扩展  用于  liveData   便捷写法  的  函数
      * [block]liveData对象，响应change变化的逻辑块
      */
     protected fun <T : Any> LiveData<T>.observeKt(block: (T?) -> Unit) {

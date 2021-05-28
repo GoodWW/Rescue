@@ -31,13 +31,11 @@ import java.io.IOException
 
 
 //region okHttp3相关扩展
-
-
 /**
  * okHttp的Call执行异步，并转化为liveData可观察结果
  */
 inline fun <reified T> okhttp3.Call.toLiveData(): LiveData<T?> {
-    val live = MutableLiveData<T>()
+    val live = MutableLiveData<T?>()
     this.enqueue(object : okhttp3.Callback {
         override fun onFailure(call: okhttp3.Call, e: IOException) {
             live.postValue(null)
@@ -57,6 +55,7 @@ inline fun <reified T> okhttp3.Call.toLiveData(): LiveData<T?> {
 /**
  * 将Response的对象，转化为需要的对象类型，也就是将body.string转为entity
  * @return 返回需要的类型对象，可能为null，如果json解析失败的话
+ * reified  关键字修饰才能知道具体类型  T::class.java
  */
 inline fun <reified T> Response.toEntity(): T? {
     if (!isSuccessful) return null
@@ -72,19 +71,16 @@ inline fun <reified T> Response.toEntity(): T? {
         e.printStackTrace()
     }.getOrNull()
 }
-
-
 //endregion
 
 
 //region retrofit 相关扩展
-
-
 /**
+ * 第一种返回数 LiveData
  * Retrofit的Call执行异步，并转化为liveData可观察结果
  */
 fun <T : Any> Call<T>.toLiveData(): LiveData<T?> {
-    val live = MutableLiveData<T>()
+    val live = MutableLiveData<T?>()
     this.enqueue(object : Callback<T> {
         override fun onFailure(call: Call<T>, t: Throwable) {
             live.postValue(null)
@@ -104,6 +100,7 @@ fun <T : Any> Call<T>.toLiveData(): LiveData<T?> {
 
 
 /**
+ *   第二种返回数据结构不同
  * 扩展retrofit的返回数据，调用await，并catch超时等异常
  * @return DataResult 返回格式为ApiResponse封装
  */
@@ -122,6 +119,7 @@ suspend fun <T : Any> Call<T>.serverData(): DataResult<T> {
 
 
 /**
+ *   第三种返回数据结构不同
  * 扩展retrofit的返回数据，调用await，并catch超时等异常
  * @return ApiResponse 返回格式为ApiResponse封装
  */
@@ -136,5 +134,4 @@ suspend fun <T : Any> Call<T>.serverRsp(): ApiResponse<T> {
     result = ApiResponse.create(response)
     return result
 }
-
 //endregion

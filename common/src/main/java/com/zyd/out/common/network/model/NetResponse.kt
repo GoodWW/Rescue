@@ -13,7 +13,7 @@ package com.zyd.out.common.network.model
  *
  * You never know what you can do until you try !
  * ----------------------------------------------------------------
- * 基础的网络返回数据结构
+ * 基础 的 网络返回 数据结构
  */
 data class NetResponse(
     val code: Int,//响应码

@@ -20,7 +20,7 @@ import kotlinx.coroutines.launch
  *
  * You never know what you can do until you try !
  * ----------------------------------------------------------------
- * viewModel的公共基类
+ * viewModel  的  公共基类
  */
 abstract class BaseViewModel : ViewModel() {
 
